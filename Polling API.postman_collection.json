@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "d8e09968-061e-474e-aa7c-84bd98f20513",
+		"name": "Polling API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11231737"
+	},
+	"item": [
+		{
+			"name": "View All Questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/questions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"questions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View a Question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/questions/{{question_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"questions",
+						"{{question_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Where is the Artic?",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/questions/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"questions",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Option",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "North",
+							"type": "text"
+						},
+						{
+							"key": "votes",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/questions/{{question_id}}/options/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"questions",
+						"{{question_id}}",
+						"options",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Question",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/questions/{{question_id}}/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"questions",
+						"{{question_id}}",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View All Options",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/options/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"options",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View an Option",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/options/{{option_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"options",
+						"{{option_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increment an Options Votes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/options/{{option_id}}/add_vote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"options",
+						"{{option_id}}",
+						"add_vote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an Option",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/options/{{option_id}}/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"options",
+						"{{option_id}}",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "question_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "option_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
